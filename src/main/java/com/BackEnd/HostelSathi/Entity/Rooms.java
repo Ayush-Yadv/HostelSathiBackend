@@ -1,7 +1,9 @@
 package com.BackEnd.HostelSathi.Entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -12,7 +14,10 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Rooms {
+  @Id
    @GeneratedValue(strategy =GenerationType.IDENTITY )
     private Long id;
 
@@ -20,7 +25,7 @@ public class Rooms {
    @Column(nullable = false)
    private String Type;
 
-    @ManyToMany
+    @ManyToOne
     @JoinColumn(name = "hotel_id",nullable = false)
     private  Hotel hotel;
 

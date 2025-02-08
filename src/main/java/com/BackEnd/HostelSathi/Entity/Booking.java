@@ -2,7 +2,9 @@ package com.BackEnd.HostelSathi.Entity;
 
 import com.BackEnd.HostelSathi.Enum.Booking_status;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -12,6 +14,8 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -47,8 +51,10 @@ public class Booking {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
-    @ElementCollection(fetch = FetchType.EAGER)
+   // @ElementCollection(fetch = FetchType.EAGER)
+    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
+
     private Booking_status booking_status;
 }
 

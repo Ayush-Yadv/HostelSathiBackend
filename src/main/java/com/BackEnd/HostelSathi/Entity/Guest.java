@@ -2,7 +2,9 @@ package com.BackEnd.HostelSathi.Entity;
 
 import com.BackEnd.HostelSathi.Enum.Gender;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Set;
@@ -10,6 +12,8 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Guest {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

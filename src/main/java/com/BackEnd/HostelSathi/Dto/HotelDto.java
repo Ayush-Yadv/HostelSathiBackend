@@ -20,7 +20,7 @@ public class HotelDto {
     private String[] photo;
 
 
-    private String[] animetiese;
+    private String [] animetiese;
 
     private ContactInfo contactInfo;
 
