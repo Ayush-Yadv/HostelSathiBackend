@@ -2,14 +2,12 @@ package com.BackEnd.HostelSathi.Entity;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -17,6 +15,7 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @Table(
       uniqueConstraints = @UniqueConstraint(
                 name = "unique_hotel_room_date",
@@ -26,7 +25,7 @@ import java.time.LocalDateTime;
 
 
 )
-public class Invetory {
+public class Inventory {
 
        @Id
        @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -42,7 +41,7 @@ public class Invetory {
         private Rooms room;
 
         @Column(nullable = false)
-        private LocalDateTime date;
+        private LocalDate date;
 
         @Column(nullable = false)
         private Integer bookedcount;
@@ -65,4 +64,7 @@ public class Invetory {
 
         @Column(nullable = false)
         private  String city;
+
+        @Column(nullable = false)
+        private Boolean closed;
 }

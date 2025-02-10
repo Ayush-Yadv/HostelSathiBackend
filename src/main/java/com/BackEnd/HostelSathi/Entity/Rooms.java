@@ -25,10 +25,6 @@ public class Rooms {
    @Column(nullable = false)
    private String Type;
 
-    @ManyToOne
-    @JoinColumn(name = "hotel_id",nullable = false)
-    private  Hotel hotel;
-
     @Column(columnDefinition ="TEXT[]")
     private String[] photo;
 
@@ -55,6 +51,11 @@ public class Rooms {
 
     @Column (nullable = false)
     private Boolean active;
+
+
+ @ManyToOne
+ @JoinColumn(name = "hotel_id",nullable = false)
+ private  Hotel hotel;
 
 
 }
